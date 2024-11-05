@@ -58,6 +58,8 @@ html {
 }
 
 .NoButton {
+    background-color: transparent;
+    font-size: 12pt;
     border: none;
     cursor: pointer;
 }
