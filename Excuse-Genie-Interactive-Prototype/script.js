@@ -64,5 +64,5 @@ ExcuseButton.addEventListener("click", () => {
     ExcuseOutput.textContent = null;
     setTimeout(() => {
         ExcuseOutput.textContent = ExcuseArray[Math.floor(Math.random() * ExcuseArray.length)];
-    }, 500);
+    }, 100);
 });
