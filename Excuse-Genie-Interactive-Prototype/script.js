@@ -37,15 +37,15 @@ Copy.addEventListener("click", () => {
     }
 });
 
-//
-ThrowAlert(string message) {
-    AlertText.textContext = message;
+// Throw Alert if something goes wrong, use animation to draw user's attention to alert
+function ThrowAlert(message) {
+    AlertText.textContent = message;
     Alert.classList.add("Alert-Animation");
     setTimeout(() => {
         Alert.classList.replace("Alert-Animation", "Alert-Animation-Reverse");
     }, 2000);
     setTimeout(() => {
         Alert.classList.remove("Alert-Animation-Reverse");
-    }, 2000);
-    AlertText.textContext = null;
+        AlertText.textContent = null;
+    }, 4000);
 }
