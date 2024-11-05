@@ -61,5 +61,8 @@ function ThrowAlert(message) {
 
 // Pick an excuse at random
 ExcuseButton.addEventListener("click", () => {
-    ExcuseOutput.textContent = ExcuseArray[Math.floor(Math.random() * ExcuseArray.length)];
+    ExcuseOutput.textContent = null;
+    setTimeout(() => {
+        ExcuseOutput.textContent = ExcuseArray[Math.floor(Math.random() * ExcuseArray.length)];
+    }, 500);
 });
