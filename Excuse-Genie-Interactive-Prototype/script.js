@@ -2,7 +2,10 @@
 Alert = document.querySelector(".Alert");
 AlertText = document.querySelector("#AlertText");
 Copy = document.querySelector("#Copy");
+ExcuseButton = document.querySelector("#ExcuseButton");
 ExcuseOutput = document.querySelector("#ExcuseOutput");
+
+ExcuseArray = ["lol", "lol2", "lol3"];
 
 
 // Confirm that the copy works, and throw error if it won't
@@ -55,3 +58,8 @@ function ThrowAlert(message) {
         AlertText.textContent = null;
     }, 4000);
 }
+
+// Pick an excuse at random
+ExcuseButton.addEventListener("click", () => {
+    ExcuseOutput.textContent = ExcuseArray[Math.floor(Math.random() * array.length)];
+});
