@@ -15,7 +15,7 @@ Copy.addEventListener("click", () => {
         DisableButton == true;
     }
     else {
-        break;
+        return;
     }
     if (!navigator.clipboard) {
         Copy.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-x");
