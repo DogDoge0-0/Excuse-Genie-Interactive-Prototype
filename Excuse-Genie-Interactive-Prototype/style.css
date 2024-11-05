@@ -8,6 +8,13 @@ html {
     color: white;
 }
 
+/* General use */
+
+.Center {
+    justify-content:center;
+    display: flex;
+}
+
 /* Buttons */
 
 .BigButton {
@@ -44,6 +51,7 @@ html {
 .LightButton {
     color: white;
     font-size: 12pt;
+    font-family: Nunito;
     border: none;
     background-color: transparent;
     cursor: pointer;
