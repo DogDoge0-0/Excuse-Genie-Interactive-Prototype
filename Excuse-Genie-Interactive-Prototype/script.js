@@ -12,7 +12,7 @@ let ExcuseArray = ["lol", "lol2", "lol3"];
 // Confirm that the copy works, and throw error if it won't
 Copy.addEventListener("click", () => {
     if (DisableButton == false) {
-        DisableButton == true;
+        DisableButton = true;
         console.log("he");
     }
     else {
@@ -56,7 +56,7 @@ Copy.addEventListener("click", () => {
             });   
         }
     }
-    DisableButton == false;
+    DisableButton = false;
 });
 
 // Throw Alert if something goes wrong, use animation to draw user's attention to alert
