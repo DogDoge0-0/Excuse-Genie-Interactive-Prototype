@@ -15,6 +15,10 @@ html {
     display: flex;
 }
 
+.NoClick {
+    cursor: default!important;
+}
+
 /* Buttons */
 
 .BigButton {
@@ -71,9 +75,32 @@ html {
 /* Alert */
 
 .Alert {
-    background-color: 2e2e2e;
+    display: none;
+}
+
+.Alert-Animation {
+    animation: Popup 2s ease-in-out 0s 1 forwards;
+    background-color: #2e2e2e;
     border-radius: 10px;
     display: relative;
+    border: white;
+}
+
+.Alert-Animation-Reverse {
+    animation: Popup 2s ease-in-out 0s 1 backwards;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    display: relative;
+    border: white;
+}
+
+@keyframes Popup {
+    0% {
+        top: -50px;
+    }
+    100% {
+        top: 100px;
+    }
 }
 
 /* Sparkle */
