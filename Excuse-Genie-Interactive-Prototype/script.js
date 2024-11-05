@@ -56,7 +56,9 @@ Copy.addEventListener("click", () => {
             });   
         }
     }
-    DisableButton = false;
+    setTimeout(() => {
+        DisableButton = false;
+    }, 4000);
 });
 
 // Throw Alert if something goes wrong, use animation to draw user's attention to alert
