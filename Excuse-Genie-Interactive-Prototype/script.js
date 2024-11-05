@@ -16,22 +16,28 @@ Copy.addEventListener("click", () => {
         if (AlertText.textContext == null) {
             Copy.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-x");
             ThrowAlert("No text to copy");
+            Copy.classList.add("NoClick")
             setTimeout(() => {
+                Copy.classList.remove("NoClick")
                 Copy.firstElementChild.classList.replace("bi-clipboard2-x", "bi-clipboard2");
-            }, 2000);
+            }, 4000);
         }
         else {
             navigator.clipboard.writeText(AlertText.textContext).then(() => {
                 Copy.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-check");
+                Copy.classList.add("NoClick")
                 setTimeout(() => {
+                    Copy.classList.remove("NoClick")
                     Copy.firstElementChild.classList.replace("bi-clipboard2-check", "bi-clipboard2");
-                }, 2000);
+                }, 4000);
             }).catch(err => {
                 ThrowAlert("Error: " + err);
                 Copy.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-x");
+                Copy.classList.add("NoClick")
                 setTimeout(() => {
+                    Copy.classList.remove("NoClick")
                     Copy.firstElementChild.classList.replace("bi-clipboard2-x", "bi-clipboard2");
-                }, 2000);
+                }, 4000);
             });   
         }
     }
