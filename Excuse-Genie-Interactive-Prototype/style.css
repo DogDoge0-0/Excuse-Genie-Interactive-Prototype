@@ -46,6 +46,7 @@ html {
     font-size: 12pt;
     border: none;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .LightButton:hover {
