@@ -56,9 +56,11 @@ html {
     border: none;
     background-color: transparent;
     cursor: pointer;
+    margin: 5px;
 }
 
 .NoButton {
+    margin: 7.5px;
     background-color: transparent;
     font-size: 18pt;
     border: none;
