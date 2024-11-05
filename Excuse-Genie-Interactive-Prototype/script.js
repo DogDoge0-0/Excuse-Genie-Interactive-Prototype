@@ -13,10 +13,8 @@ let ExcuseArray = ["lol", "lol2", "lol3"];
 Copy.addEventListener("click", () => {
     if (DisableButton == false) {
         DisableButton = true;
-        console.log("he");
     }
     else {
-        console.log("womp");
         return;
     }
     if (!navigator.clipboard) {
