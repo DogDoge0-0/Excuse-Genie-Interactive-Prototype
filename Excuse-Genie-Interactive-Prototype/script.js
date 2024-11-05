@@ -25,7 +25,7 @@ Copy.addEventListener("click", () => {
         }, 4000);
     } 
     else {
-        if (AlertText.textContext == null) {
+        if (AlertText.textContent == null) {
             Copy.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-x");
             ThrowAlert("No text to copy.");
             Copy.classList.add("NoClick");
@@ -35,7 +35,7 @@ Copy.addEventListener("click", () => {
             }, 4000);
         }
         else {
-            navigator.clipboard.writeText(AlertText.textContext).then(() => {
+            navigator.clipboard.writeText(AlertText.textContent).then(() => {
                 Copy.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-check");
                 Copy.classList.add("NoClick")
                 ThrowAlert("Copied excuse to clipboard!");
