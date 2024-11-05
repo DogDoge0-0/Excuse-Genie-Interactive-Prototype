@@ -43,7 +43,8 @@ html {
 
 .LightButton {
     color: white;
-    font-size: 12px;
+    font-size: 12pt;
+    border: none;
     background-color: transparent;
 }
 
