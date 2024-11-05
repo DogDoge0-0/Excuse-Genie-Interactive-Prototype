@@ -68,6 +68,14 @@ html {
     cursor: pointer;
 }
 
+/* Alert */
+
+.Alert {
+    background-color: 2e2e2e;
+    border-radius: 10px;
+    display: relative;
+}
+
 /* Sparkle */
 
 .Sparkle {
