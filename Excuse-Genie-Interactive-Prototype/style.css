@@ -57,8 +57,9 @@ html {
     cursor: pointer;
 }
 
-.LightButton:hover {
-    text-decoration: underline;
+.NoButton {
+    border: none;
+    cursor: pointer;
 }
 
 /* Sparkle */
