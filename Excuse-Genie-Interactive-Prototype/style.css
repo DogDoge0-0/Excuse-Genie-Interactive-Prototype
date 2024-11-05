@@ -18,6 +18,7 @@ html {
 /* Buttons */
 
 .BigButton {
+    margin: 7.5px;
     font-size: 18pt;
     font-family: Nunito;
     background-color: transparent;
