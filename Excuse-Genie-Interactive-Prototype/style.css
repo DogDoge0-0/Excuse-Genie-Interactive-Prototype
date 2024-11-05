@@ -78,30 +78,30 @@ html {
     display: none;
     padding: 5px;
     padding-left: 10px;
-    padding-rgiht: 10px;
+    padding-right: 10px;
     position: absolute;
     background-color: #2e2e2e;
+    border: 1px solid white;
 }
 
 .Alert-Animation {
     top: -50px;
     display: block;
-    animation: Popup 2s ease-in-out 0s 1 forwards;
+    animation: Popup 1s ease-in-out 0s 1 forwards;
     border-radius: 10px;
-    border: 1px solid white;
 }
 
 .Alert-Animation-Reverse {
     top: 100px;
     display: block;
-    animation: PopupReverse 2s ease-in-out 0s 1 forwards;
+    animation: PopupReverse 1s ease-in-out 0s 1 forwards;
     background-color: #2e2e2e;
     border-radius: 10px;
 }
 
 @keyframes Popup {
     0% {
-        top: -50px;
+        top: -100px;
     }
 
     100% {
@@ -116,7 +116,7 @@ html {
     }
 
     100% {
-        top: -50px;
+        top: -100px;
     }
 }
 
