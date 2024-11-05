@@ -1,15 +1,22 @@
 // Intialization
-Alert = document.querySelector(".Alert");
-AlertText = document.querySelector("#AlertText");
-Copy = document.querySelector("#Copy");
-ExcuseButton = document.querySelector("#ExcuseButton");
-ExcuseOutput = document.querySelector("#ExcuseOutput");
+let Alert = document.querySelector(".Alert");
+let AlertText = document.querySelector("#AlertText");
+let Copy = document.querySelector("#Copy");
+let DisableButton = false;
+let ExcuseButton = document.querySelector("#ExcuseButton");
+let ExcuseOutput = document.querySelector("#ExcuseOutput");
 
-ExcuseArray = ["lol", "lol2", "lol3"];
+let ExcuseArray = ["lol", "lol2", "lol3"];
 
 
 // Confirm that the copy works, and throw error if it won't
 Copy.addEventListener("click", () => {
+    if (DisableButton == false) {
+        DisableButton == true;
+    }
+    else {
+        break;
+    }
     if (!navigator.clipboard) {
         Copy.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-x");
         ThrowAlert("Copying to clipboard isn't supported by your browser and has been disabled.");
@@ -47,6 +54,7 @@ Copy.addEventListener("click", () => {
             });   
         }
     }
+    DisableButton == false;
 });
 
 // Throw Alert if something goes wrong, use animation to draw user's attention to alert
