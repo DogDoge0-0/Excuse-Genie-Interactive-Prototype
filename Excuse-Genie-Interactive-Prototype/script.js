@@ -25,7 +25,7 @@ Copy.addEventListener("click", () => {
                 setTimeout(() => {
                     Copy.firstElementChild.classList.replace("bi-clipboard2-check", "bi-clipboard2");
                 }, 2000);
-        }   
+            });   
         });
     }
 });
