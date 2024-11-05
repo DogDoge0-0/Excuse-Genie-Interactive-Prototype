@@ -12,16 +12,16 @@ ExcuseArray = ["lol", "lol2", "lol3"];
 Copy.addEventListener("click", () => {
     if (!navigator.clipboard) {
         Copy.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-x");
-        ThrowAlert("Copying to clipboard isn't supported by your browser and has been disabled");
-        Copy.classList.add("NoClick")
+        ThrowAlert("Copying to clipboard isn't supported by your browser and has been disabled.");
+        Copy.classList.add("NoClick");
     } 
     else {
         if (AlertText.textContext == null) {
             Copy.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-x");
-            ThrowAlert("No text to copy");
-            Copy.classList.add("NoClick")
+            ThrowAlert("No text to copy.");
+            Copy.classList.add("NoClick");
             setTimeout(() => {
-                Copy.classList.remove("NoClick")
+                Copy.classList.remove("NoClick");
                 Copy.firstElementChild.classList.replace("bi-clipboard2-x", "bi-clipboard2");
             }, 4000);
         }
@@ -29,16 +29,17 @@ Copy.addEventListener("click", () => {
             navigator.clipboard.writeText(AlertText.textContext).then(() => {
                 Copy.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-check");
                 Copy.classList.add("NoClick")
+                ThrowAlert("Copied excuse to clipboard!");
                 setTimeout(() => {
-                    Copy.classList.remove("NoClick")
+                    Copy.classList.remove("NoClick");
                     Copy.firstElementChild.classList.replace("bi-clipboard2-check", "bi-clipboard2");
                 }, 4000);
             }).catch(err => {
-                ThrowAlert("Error: " + err);
                 Copy.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-x");
-                Copy.classList.add("NoClick")
+                Copy.classList.add("NoClick");
+                ThrowAlert("Error: " + err);
                 setTimeout(() => {
-                    Copy.classList.remove("NoClick")
+                    Copy.classList.remove("NoClick");
                     Copy.firstElementChild.classList.replace("bi-clipboard2-x", "bi-clipboard2");
                 }, 4000);
             });   
