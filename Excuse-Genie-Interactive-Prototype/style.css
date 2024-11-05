@@ -105,13 +105,13 @@ html {
     }
 
     100% {
-        top: 100px;
+        top: 70px;
     }
 }
 
 @keyframes PopupReverse {
     0% {
-        top: 100px;
+        top: 70px;
         opacity: 1;
     }
 

@@ -25,7 +25,7 @@ Copy.addEventListener("click", () => {
         }, 4000);
     } 
     else {
-        if (AlertText.textContent == null) {
+        if (AlertText.textContent == "") {
             Copy.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-x");
             ThrowAlert("No text to copy.");
             Copy.classList.add("NoClick");
