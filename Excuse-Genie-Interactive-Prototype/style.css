@@ -8,6 +8,8 @@ html {
     color: white;
 }
 
+/* Buttons */
+
 .BigButton {
     font-size: 18pt;
     font-family: Nunito;
@@ -38,6 +40,17 @@ html {
         color: white;
     }
 }
+
+.LightButton {
+    color: white;
+    font-size: 12px;
+}
+
+.LightButton:hover {
+    text-decoration: underline;
+}
+
+/* Sparkle */
 
 .Sparkle {
     animation: SparkleAnim 5s linear 0s infinite forwards;
