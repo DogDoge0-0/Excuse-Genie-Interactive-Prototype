@@ -14,6 +14,8 @@ Copy.addEventListener("click", () => {
         Copy.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-x");
         ThrowAlert("Copying to clipboard isn't supported by your browser and has been disabled.");
         Copy.classList.add("NoClick");
+        setTimeout(() => {
+        }, 4000);
     } 
     else {
         if (AlertText.textContext == null) {
