@@ -17,7 +17,7 @@ Copy.addEventListener("click", () => {
             Copy.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-x");
             ThrowAlert("No text to copy");
             setTimeout(() => {
-                Copy.firstElementChild.classList.replace("bi-clipboard2-check", "bi-clipboard2");
+                Copy.firstElementChild.classList.replace("bi-clipboard2-x", "bi-clipboard2");
             }, 2000);
         }
         else {
@@ -30,7 +30,7 @@ Copy.addEventListener("click", () => {
                 ThrowAlert("Error: " + err);
                 Copy.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-x");
                 setTimeout(() => {
-                    Copy.firstElementChild.classList.replace("bi-clipboard2-check", "bi-clipboard2");
+                    Copy.firstElementChild.classList.replace("bi-clipboard2-x", "bi-clipboard2");
                 }, 2000);
             });   
         }
