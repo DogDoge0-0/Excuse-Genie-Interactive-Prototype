@@ -87,14 +87,14 @@ html {
 .Alert-Animation {
     top: -50px;
     display: block;
-    animation: Popup 1s ease-in-out 0s 1 forwards;
+    animation: Popup 0.75s ease-in-out 0s 1 forwards;
     border-radius: 10px;
 }
 
 .Alert-Animation-Reverse {
     top: 100px;
     display: block;
-    animation: PopupReverse 1s ease-in-out 0s 1 forwards;
+    animation: PopupReverse 0.75s ease-in-out 0s 1 forwards;
     background-color: #2e2e2e;
     border-radius: 10px;
 }

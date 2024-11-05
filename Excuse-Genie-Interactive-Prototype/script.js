@@ -22,7 +22,7 @@ Copy.addEventListener("click", () => {
         ThrowAlert("Copying to clipboard isn't supported by your browser and has been disabled.");
         Copy.classList.add("NoClick");
         setTimeout(() => {
-        }, 4000);
+        }, 3000);
     } 
     else {
         if (AlertText.textContent == "") {
@@ -32,7 +32,7 @@ Copy.addEventListener("click", () => {
             setTimeout(() => {
                 Copy.classList.remove("NoClick");
                 Copy.firstElementChild.classList.replace("bi-clipboard2-x", "bi-clipboard2");
-            }, 4000);
+            }, 3000);
         }
         else {
             navigator.clipboard.writeText(AlertText.textContent).then(() => {
@@ -42,7 +42,7 @@ Copy.addEventListener("click", () => {
                 setTimeout(() => {
                     Copy.classList.remove("NoClick");
                     Copy.firstElementChild.classList.replace("bi-clipboard2-check", "bi-clipboard2");
-                }, 4000);
+                }, 3000);
             }).catch(err => {
                 Copy.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-x");
                 Copy.classList.add("NoClick");
@@ -50,13 +50,13 @@ Copy.addEventListener("click", () => {
                 setTimeout(() => {
                     Copy.classList.remove("NoClick");
                     Copy.firstElementChild.classList.replace("bi-clipboard2-x", "bi-clipboard2");
-                }, 4000);
+                }, 3000);
             });   
         }
     }
     setTimeout(() => {
         DisableButton = false;
-    }, 4000);
+    }, 3000);
 });
 
 // Throw Alert if something goes wrong, use animation to draw user's attention to alert
@@ -65,11 +65,11 @@ function ThrowAlert(message) {
     Alert.classList.add("Alert-Animation");
     setTimeout(() => {
         Alert.classList.replace("Alert-Animation", "Alert-Animation-Reverse");
-    }, 2000);
+    }, 1500);
     setTimeout(() => {
         Alert.classList.remove("Alert-Animation-Reverse");
         AlertText.textContent = null;
-    }, 4000);
+    }, 3000);
 }
 
 // Pick an excuse at random
