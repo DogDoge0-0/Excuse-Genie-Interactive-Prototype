@@ -123,6 +123,9 @@ html {
 /* Version */
 
 .VersHolder {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
     position: absolute;
     width: 100%;
     bottom: 0;
@@ -133,6 +136,7 @@ html {
 
 .Vers {
     padding: 10px 10px;
+    margin: 0;
 }
 
 /* Sparkle */
