@@ -14,6 +14,3 @@ Holder.style.bottom = "10px";
 
 Display.textContent = CurrentVersion;
 Holder.appendChild(Display);
-Display.style.position = "absolute";
-Display.style.bottom = "50vh";
-Display.style.right = "50vw";
