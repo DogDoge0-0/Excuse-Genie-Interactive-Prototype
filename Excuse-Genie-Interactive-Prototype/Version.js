@@ -9,4 +9,5 @@ Holder.classList.add("VersHolder");
 
 // Display Version
 Display.textContent = CurrentVersion;
+Display.classList.add("Vers");
 Holder.appendChild(Display);
