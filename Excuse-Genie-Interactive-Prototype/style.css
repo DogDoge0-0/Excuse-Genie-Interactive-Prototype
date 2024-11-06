@@ -3,7 +3,7 @@ html {
     margin: 10px;
     background-color: #333;
     /* Defaults */
-    font-size: 12pt;
+    font-size: 18pt;
     font-family: Nunito;
     color: white;
 }
@@ -17,6 +17,10 @@ html {
 
 .NoClick {
     cursor: default!important;
+}
+
+h1 {
+    font-size: 32pt;
 }
 
 /* Buttons */
