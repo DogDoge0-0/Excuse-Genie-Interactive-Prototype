@@ -1,10 +1,19 @@
 // Initialization
 const CurrentVersion = "Alpha v0.0.1a";
-const VersionDisplay = document.createElement("p");
+const Display = document.createElement("p");
+const Holder = document.createElement("span");
 
-// Set Version to display with proper styling
-VersionDisplay.textContent = CurrentVersion;
-document.body.appendChild(VersionDisplay);
-VersionDisplay.style.position = "absolute";
-VersionDisplay.style.bottom = "50%";
-VersionDisplay.style.right = "50%";
+// Set VersionHolder to display with proper styling
+document.body.appendChild(Holder);
+Holder.style.display = "flex";
+Holder.style.justifyContent = "right";
+Holder.style.position = "relative";
+Holder.style.bottom = "10px";
+
+
+
+Display.textContent = CurrentVersion;
+Holder.appendChild(VersionDisplay);
+Display.style.position = "absolute";
+Display.style.bottom = "50vh";
+Display.style.right = "50vw";
