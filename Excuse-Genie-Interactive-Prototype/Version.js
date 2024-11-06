@@ -1,6 +1,6 @@
 // Initialization
 const CurrentVersion = "Alpha v0.0.1a";
-const VersionDisplay = document.createElement("p");
+const VersionDisplay = document.body.createElement("p");
 
 // Set Version to display with proper styling
 VersionDisplay.textContent = CurrentVersion;
