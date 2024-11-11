@@ -8,10 +8,20 @@ html {
     color: white;
 }
 
+body {
+    padding: 0;
+    margin: 0;
+}
+
 /* General use */
 
 .Center {
     justify-content:center;
+    display: flex;
+}
+
+.VerticalCenter {
+    align-items: center;
     display: flex;
 }
 
@@ -23,8 +33,11 @@ h1 {
     font-size: 32pt;
 }
 
-/* Buttons */
+.ExcuseOutput {
+    text-align: center;
+}
 
+/* Buttons */
 .BigButton {
     margin: 7.5px;
     font-size: 18pt;
@@ -35,6 +48,7 @@ h1 {
     border-radius: 10px;
     padding: 7.5px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .BigButton:hover {
@@ -65,6 +79,7 @@ h1 {
     background-color: transparent;
     cursor: pointer;
     margin: 5px;
+    text-decoration: none;
 }
 
 .NoButton {

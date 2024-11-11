@@ -13,22 +13,22 @@
 </head>
 <body>
     <span class="Center">
-        <div class="Alert">
+        <span class="Alert">
             <p id="AlertText"></p>
-        </div>
+        </span>
     </span>
-    <a href="index.html">
-        <button class="LightButton"><i class="bi bi-chevron-left"></i> Back</button>
+    <a href="index.html" class="LightButton">
+        <i class="bi bi-chevron-left"></i> Back
     </a>
-    <br />
+    <br>
     <button class="BigButton" id="ExcuseButton">Generate an excuse</button>
     <button class="NoButton" id="Copy" title="Copy to Clipboard"><i class="bi bi-clipboard2"></i></button>
-    <br />
-    <span class="Center">
-        <p id="ExcuseOutput"></p>
-    </span>
+    <button class="NoButton" id="Favorite" title="Favorite"><i class="bi bi-bookmark"></i></button>
+    <br>
+    <p id="ExcuseOutput" class="ExcuseOutput"></p>
     <script src="Excuse.js"></script>
     <script src="Copy.js"></script>
     <script src="Version.js"></script>
+    <script src="Favorite.js"></script>
 </body>
 </html>
