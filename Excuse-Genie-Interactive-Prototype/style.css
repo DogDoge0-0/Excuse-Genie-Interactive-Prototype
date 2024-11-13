@@ -175,6 +175,7 @@ hr {
 /* Alert */
 
 .Alert {
+    z-index: 50;
     display: none;
     padding: 5px;
     padding-left: 10px;

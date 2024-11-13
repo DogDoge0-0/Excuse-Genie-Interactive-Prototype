@@ -2,6 +2,7 @@
 let FavoriteButton = document.querySelector("#Favorite");
 let FavoriteArray = JSON.parse(localStorage.getItem("FavoriteArray")) || [];
 let DisableButtonFav = false;
+let DisableButtonCopyFav = false;
 let ClearLocalStorage = document.querySelector("#ClearLocalStorage");
 let ShowAllFavorites = document.querySelector("#OpenFavModal");
 
@@ -66,12 +67,76 @@ FavoriteButton.addEventListener("click", () => {
 ShowAllFavorites.addEventListener("click", () => {
     let i;
     for (i = 0; i < FavoriteArray.length; i++) {
-        console.log("hi");
-        ModalBody.innerHTML += FavoriteArray[i] + '<button class="NoButton" id="Copy" title="Copy to Clipboard"><i class="bi bi-clipboard2"></i></button><br>';
+        // Create each item and its associated button
+        ModalBody.innerHTML += `
+            <span class="FavoriteText">${FavoriteArray[i]}</span>
+            <button class="NoButton CopyButton" title="Copy to Clipboard">
+                <i class="bi bi-clipboard2"></i>
+            </button>
+            <br>
+        `;
     }
+
+    // Set the modal title
     ModalTitle.textContent = i + " Favorites";
     Cover.classList.add("Dark");
     Modal.classList.add("Modal-Animation");
+
+    // Select the buttons and the favorite text once (outside the loop)
+    let CopyFavButtons = document.querySelectorAll('.CopyButton');
+    let FavoriteText = document.querySelectorAll('.FavoriteText');
+
+    // Add event listeners to each copy button
+    CopyFavButtons.forEach((CopyFavButton, index) => {
+        CopyFavButton.addEventListener("click", () => {
+            if (DisableButtonCopyFav == false) {
+                DisableButtonCopyFav = true;
+            } else {
+                return;
+            }
+
+            if (!navigator.clipboard) {
+                CopyFavButton.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-x");
+                ThrowAlert("Copying to clipboard isn't supported by your browser and has been disabled.");
+                CopyFavButton.classList.add("NoClick");
+                setTimeout(() => {
+                    CopyFavButton.firstElementChild.classList.replace("bi-clipboard2-x", "bi-clipboard2");
+                }, 3000);
+            } else {
+                // Check if there's any text to copy
+                if (FavoriteText[index].textContent.trim() === "") {
+                    CopyFavButton.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-x");
+                    ThrowAlert("No text to copy.");
+                    CopyFavButton.classList.add("NoClick");
+                    setTimeout(() => {
+                        CopyFavButton.firstElementChild.classList.replace("bi-clipboard2-x", "bi-clipboard2");
+                    }, 3000);
+                } else {
+                    navigator.clipboard.writeText(FavoriteText[index].textContent).then(() => {
+                        CopyFavButton.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-check");
+                        CopyFavButton.classList.add("NoClick");
+                        ThrowAlert("Copied favorite to clipboard!");
+                        setTimeout(() => {
+                            CopyFavButton.firstElementChild.classList.replace("bi-clipboard2-check", "bi-clipboard2");
+                        }, 3000);
+                    }).catch(err => {
+                        CopyFavButton.firstElementChild.classList.replace("bi-clipboard2", "bi-clipboard2-x");
+                        CopyFavButton.classList.add("NoClick");
+                        ThrowAlert("Error: " + err);
+                        setTimeout(() => {
+                            CopyFavButton.firstElementChild.classList.replace("bi-clipboard2-x", "bi-clipboard2");
+                        }, 3000);
+                    });
+                }
+            }
+
+            // Reset the button after a short delay
+            setTimeout(() => {
+                DisableButtonCopyFav = false;
+                CopyFavButton.classList.remove("NoClick");
+            }, 3000);
+        });
+    });
 });
 
 // Clear All Favorites
@@ -90,7 +155,7 @@ ClearLocalStorage.addEventListener("click", () => {
                     setTimeout(() => {
                         localStorage.clear();
                         FavoriteArray = {};
-                        ClearLocalStorage.textContent = "Clear all Favorites";
+                        location.reload();
                     }, 500);
                 });
             }, 500);
