@@ -12,11 +12,9 @@ const callback = (mutationList, observer) => {
             if (FavoriteArray.includes(excuseText)) {
                 FavoriteButton.firstElementChild.classList.replace("bi-bookmark", "bi-bookmark-check");
                 FavoriteButton.title = "This excuse is saved in your favorites";
-                console.log("yo");
             } else {
                 FavoriteButton.firstElementChild.classList.replace("bi-bookmark-check", "bi-bookmark");
                 FavoriteButton.title = "Save this excuse to favorites";
-                console.log("nah");
             }
         }
     }
@@ -40,7 +38,7 @@ FavoriteButton.addEventListener("click", () => {
             FavoriteArray.push(excuseText);
             localStorage.setItem("FavoriteArray", JSON.stringify(FavoriteArray));
             FavoriteButton.firstElementChild.classList.replace("bi-bookmark", "bi-bookmark-check");
-            ThrowAlert("Favorites list updated")
+            ThrowAlert("Favorites list updated");
         } else {
             FavoriteButton.firstElementChild.classList.replace("bi-bookmark", "bi-bookmark-x");
             ThrowAlert("This excuse is already in your favorites");
