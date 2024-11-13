@@ -3,9 +3,14 @@ html {
     margin: 10px;
     background-color: #333;
     /* Defaults */
-    font-size: 12pt;
+    font-size: 18pt;
     font-family: Nunito;
     color: white;
+}
+
+body {
+    padding: 0;
+    margin: 0;
 }
 
 /* General use */
@@ -15,12 +20,24 @@ html {
     display: flex;
 }
 
+.VerticalCenter {
+    align-items: center;
+    display: flex;
+}
+
 .NoClick {
     cursor: default!important;
 }
 
-/* Buttons */
+h1 {
+    font-size: 32pt;
+}
 
+.ExcuseOutput {
+    text-align: center;
+}
+
+/* Buttons */
 .BigButton {
     margin: 7.5px;
     font-size: 18pt;
@@ -31,6 +48,7 @@ html {
     border-radius: 10px;
     padding: 7.5px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .BigButton:hover {
@@ -61,6 +79,7 @@ html {
     background-color: transparent;
     cursor: pointer;
     margin: 5px;
+    text-decoration: none;
 }
 
 .NoButton {
@@ -137,6 +156,7 @@ html {
 .Vers {
     padding: 10px 10px;
     margin: 0;
+    font-size: 12pt;
 }
 
 /* Sparkle */

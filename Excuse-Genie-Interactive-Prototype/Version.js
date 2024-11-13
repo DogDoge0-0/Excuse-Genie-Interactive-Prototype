@@ -1,5 +1,5 @@
 // Initialization
-const CurrentVersion = "Alpha v0.0.1a";
+const CurrentVersion = "Alpha v0.0.1b";
 const Display = document.createElement("p");
 const Holder = document.createElement("span");
 
