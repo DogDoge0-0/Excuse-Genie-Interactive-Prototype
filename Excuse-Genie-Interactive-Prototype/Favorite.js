@@ -2,6 +2,8 @@
 let FavoriteButton = document.querySelector("#Favorite");
 let FavoriteArray = JSON.parse(localStorage.getItem("FavoriteArray")) || [];
 let DisableButtonFav = false;
+let ClearLocalStorage = document.querySelector("#ClearLocalStorage");
+let ShowAllFavorites = document.querySelector("#OpenFavModal");
 
 // Callback function for mutation events
 const callback = (mutationList, observer) => {
@@ -58,4 +60,40 @@ FavoriteButton.addEventListener("click", () => {
         DisableButtonFav = false;
         FavoriteButton.classList.remove("NoClick");
     }, 3000);
+});
+
+// Show all favorites
+ShowAllFavorites.addEventListener("click", () => {
+    let i;
+    for (i = 0; i < FavoriteArray.length; i++) {
+        console.log("hi");
+        ModalBody.innerHTML += FavoriteArray[i] + '<button class="NoButton" id="Copy" title="Copy to Clipboard"><i class="bi bi-clipboard2"></i></button><br>';
+    }
+    ModalTitle.textContent = i + " Favorites";
+    Cover.classList.add("Dark");
+    Modal.classList.add("Modal-Animation");
+});
+
+// Clear All Favorites
+ClearLocalStorage.addEventListener("click", () => {
+    ClearLocalStorage.textContent = "Are you sure?";
+    ClearLocalStorage.classList.add("NoClick");
+    setTimeout(() => {
+        ClearLocalStorage.classList.remove("NoClick");
+        ClearLocalStorage.addEventListener("click", () => {
+            ClearLocalStorage.classList.add("NoClick");
+            ClearLocalStorage.textContent = "There is no going back";
+            setTimeout(() => {
+                ClearLocalStorage.classList.remove("NoClick");
+                ClearLocalStorage.addEventListener("click", () => {
+                    CloseModalFunc();
+                    setTimeout(() => {
+                        localStorage.clear();
+                        FavoriteArray = {};
+                        ClearLocalStorage.textContent = "Clear all Favorites";
+                    }, 500);
+                });
+            }, 500);
+        });
+    }, 500);
 });

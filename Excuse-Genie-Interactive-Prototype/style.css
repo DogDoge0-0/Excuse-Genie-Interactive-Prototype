@@ -11,6 +11,8 @@ html {
 body {
     padding: 0;
     margin: 0;
+    width: calc(100vw - 27px);
+    height: calc(100vh - 27px);
 }
 
 /* General use */
@@ -35,6 +37,51 @@ h1 {
 
 .ExcuseOutput {
     text-align: center;
+}
+
+hr {
+    width: 90%;
+    opacity: 75%;
+    color: lightgrey;
+}
+
+.Cover {
+    width: 100vw;
+    height: 100vh;
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+.Dark {
+    z-index: 10;
+    background-color: #141414;
+    animation: DarkAnim 0.5s ease-in-out 0s 1 forwards;
+    opacity: 50%;
+}
+
+@keyframes DarkAnim {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: black;
+    }
+}
+
+.DarkReverse {
+    animation: DarkAnimReverse 0.5s ease-in-out 0s 1 forwards;
+}
+
+@keyframes DarkAnimReverse {
+    0% {
+        background-color: black;
+    }
+
+    100% {
+        background-color: transparent;
+    }
 }
 
 /* Buttons */
@@ -67,6 +114,40 @@ h1 {
     100% {
         background-color: dodgerblue;
         border: 2px, solid, dodgerblue;
+        color: white;
+    }
+}
+
+.BigRedButton {
+    margin: 7.5px;
+    font-size: 18pt;
+    font-family: Nunito;
+    background-color: transparent;
+    border: 2px, solid, red;
+    color: red;
+    border-radius: 10px;
+    padding: 7.5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.BigRedButton:hover {
+    animation: RedButtonAnim 0.3s ease-in-out 0s 1 forwards;
+    background-color: red;
+    border: 2px, solid, red;
+    color: white;
+}
+
+@keyframes RedButtonAnim {
+    0% {
+        background-color: transparent;
+        border: 2px, solid, red;
+        color: red;
+    }
+
+    100% {
+        background-color: red;
+        border: 2px, solid, red;
         color: white;
     }
 }
@@ -139,21 +220,97 @@ h1 {
     }
 }
 
+/* Modal */
+
+.Modal {
+    z-index: -1;
+    display: none;
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    position: absolute;
+    background-color: #333;
+    border: 1px solid white;
+    width: 75vw;
+    margin: 20px;
+}
+
+.ModalTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-top: 0.67em;
+    padding-bottom: 0.67em;
+}
+
+.CloseModalHolder {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Modal-Animation {
+    z-index: 20;
+    top: 1vh;
+    display: block;
+    animation: ShowModal 0.5s ease-in-out 0s 1 forwards;
+    border-radius: 10px;
+}
+
+.Modal-Close-Animation {
+    top: 0;
+    display: block;
+    animation: HideModal 0.5s ease-in-out 0s 1 forwards;
+    border-radius: 10px;
+}
+
+.CloseModalHolder {
+    display: flex;
+    justify-content: flex-end;
+    position: static;
+}
+
+@keyframes ShowModal {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    100% {
+        top: 1vh;
+        opacity: 100%;
+    }
+}
+
+@keyframes HideModal {
+    0% {
+        top: 1vh;
+        opacity: 100%;
+    }
+
+    100% {
+        top: 0;
+        opacity: 0;
+    }
+}
+
 /* Version */
 
 .VersHolder {
     display: flex;
-    align-items: stretch;
+    align-items: flex-end;
     justify-content: flex-end;
-    position: absolute;
+    position: fixed;
     width: 100%;
     bottom: 0;
-    left: 50vw;
-    transform: translate(-50%);
+    right: 0;
     text-align: right;
 }
 
 .Vers {
+    position: sticky;
     padding: 10px 10px;
     margin: 0;
     font-size: 12pt;

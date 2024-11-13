@@ -12,9 +12,24 @@
     <title>Excuse Genie - Generator</title>
 </head>
 <body>
+    <div class="Cover" id="Cover"></div>
     <span class="Center">
         <span class="Alert">
             <p id="AlertText"></p>
+        </span>
+    </span>
+    <span class="Center">
+        <span class="Modal" id="Modal">
+            <span class="ModalTitle">
+                <span id="ModalTitle"></span>
+                <span class="CloseModalHolder">
+                    <i id="CloseModal" class="bi bi-x"></i>
+                </span>
+            </span>
+            <hr>
+            <p id="ModalBody"></p>
+            <hr>
+            <button class="BigRedButton" id="ClearLocalStorage">Clear all Favorites</button>
         </span>
     </span>
     <a href="index.html" class="LightButton">
@@ -24,6 +39,8 @@
     <button class="BigButton" id="ExcuseButton">Generate an excuse</button>
     <button class="NoButton" id="Copy" title="Copy to Clipboard"><i class="bi bi-clipboard2"></i></button>
     <button class="NoButton" id="Favorite" title="Favorite"><i class="bi bi-bookmark"></i></button>
+    <br>
+    <button class="BigButton" id="OpenFavModal">Show all Favorites</button>
     <br>
     <p id="ExcuseOutput" class="ExcuseOutput"></p>
     <script src="Excuse.js"></script>
